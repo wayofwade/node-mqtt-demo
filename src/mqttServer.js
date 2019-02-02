@@ -6,10 +6,29 @@
  */
 
 
+/*
+* mqtt服务的连接需要说明来源是浏览器还是客户端
+* 使用客户端访问mqtt服务时使用options配置
+* 使用浏览器访问mqtt服务时使用settings配置
+* */
 const mosca = require('mosca')
-const MqttServer = new mosca.Server({
+
+const ascoltatore = {
+  //using ascoltatore
+};
+const settings = { // mqtt-client.html访问时的配置文件
+  http: {
+    port: 8081,
+    bundle: true,
+    static: './'
+  },
+  backend: ascoltatore
+};
+const options = { // mqttClient.js访问时的配置文件
   port: 8081
-})
+}
+const MqttServer = new mosca.Server(options) // 当使用mqttClient.js访问此服务
+// const MqttServer = new mosca.Server(settings) // 当使用mqtt-client.html访问此服务
 
 MqttServer.on('clientConnected', function(client){
   console.log('client connected', client.id);
