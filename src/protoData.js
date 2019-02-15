@@ -1,5 +1,5 @@
 /**
- * @Description:前后端用protobuf交互
+ * @Description:前后端用protobuf交互可以参考==>> proto/protobuf.md
  * @params:
  * @return:
  * Created by chencc on 2019/2/12.
