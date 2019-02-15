@@ -7,3 +7,5 @@
 - 修改mqtt服务的配置在mqttServer.js里修改
 - 使用客户端访问mqtt服务时使用options配置
 - 使用浏览器访问mqtt服务时使用settings配置
+- protoData的js为以protobuf的形式进行交互
+- protobuf交互[参考链接](https://segmentfault.com/a/1190000018161715)
